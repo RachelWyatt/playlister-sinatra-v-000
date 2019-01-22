@@ -7,11 +7,6 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-
-
-
-
-
   get '/genres' do
     @genres = Genre.all
     erb :'genres/index'
@@ -31,12 +26,6 @@ class ApplicationController < Sinatra::Base
     @song = Song.find_by_slug(params[:slug])
     erb :'songs/show'
   end
-
-
-
-
-
-
   get '/songs/:slug/edit' do
     @song = Song.find_by_slug(params[:slug])
     erb :'songs/edit'
